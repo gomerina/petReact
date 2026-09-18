@@ -2,7 +2,6 @@ import './css/nullstyle.scss'
 import './css/style.scss'
 import './css/typography.scss'
 
-import { useEffect } from 'react';
 import Header from './components/chunk/header/Header'
 import Footer from './components/chunk/footer/Footer'
 import MainScreen from './components/blocks/mainScreen/MainScreen'
@@ -12,9 +11,7 @@ import Offer from './components/blocks/offer/Offer';
 import MainCategories from './components/blocks/mainCategories/MainCategories';
 import Reviews from './components/blocks/reviews/Reviews';
 export default function App() {
-	useEffect(() => {
-		document.title = 'Мой сайт'
-	}, [])
+
 	return (
 		<>
 			<Header />

@@ -1,0 +1,13 @@
+body .reviews-slider {
+    padding: 20px;
+    margin: -20px;
+}
+.main-reviews {
+    & .centered-box {
+        gap: 50px;
+    }
+}
+.reviews-prev,
+.reviews-next {
+    display: flex;
+}

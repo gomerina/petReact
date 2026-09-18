@@ -1,0 +1,27 @@
+.offer {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 41px 120px 0 41px;
+        background: #c2efd4;
+    }
+    &__content {
+        padding: 33px 0;
+        max-width: 590px;
+    }
+    &__img {
+        width: 460px;
+        flex-shrink: 0;
+        margin-top: auto;
+    }
+    &__heading {
+        margin: 0 0 20px 0;
+    }
+    &__descr {
+        margin: 0 0 40px 0;
+    }
+    &__timer {
+        margin: 0 0 40px 0;
+    }
+}

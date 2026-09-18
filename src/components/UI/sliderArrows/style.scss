@@ -1,0 +1,13 @@
+.reviews-prev,
+.reviews-next {
+    box-shadow: 0 7px 51px 0 rgba(0, 0, 0, 0.1);
+    & rect,
+    & path {
+        transition: var(--transition);
+    }
+    &:hover {
+        & rect {
+            fill: #c2efd4;
+        }
+    }
+}

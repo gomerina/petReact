@@ -1,0 +1,56 @@
+:root {
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+.container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+    @media screen and (max-width: 1024px) {
+        padding: 0 20px;
+    }
+}
+.section {
+    margin: 120px 0;
+    @media screen and (max-width: 1260px) {
+        margin: 80px 0;
+    }
+}
+.centered-box {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 0 0;
+}
+body .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}

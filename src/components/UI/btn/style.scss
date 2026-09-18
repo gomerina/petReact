@@ -1,0 +1,25 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px 55px;
+    transition: var(--transition);
+    background: transparent;
+    border: 2px solid #224f34;
+    border-radius: 3px;
+    color: #224f34;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: normal;
+    &.fill {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 22px 60px;
+        background: #224f34;
+        box-shadow: 0 7px 30px 0 rgba(0, 0, 0, 0.05);
+    }
+}

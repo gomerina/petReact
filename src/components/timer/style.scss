@@ -1,0 +1,17 @@
+.timer {
+    display: flex;
+    gap: 35px;
+    &__item {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        color: #224f34;
+        &-body {
+            font-size: 16px;
+        }
+    }
+}

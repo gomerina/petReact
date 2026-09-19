@@ -54,3 +54,17 @@ body .swiper-slide {
     flex-direction: column;
     height: auto;
 }
+body .fancybox__carousel {
+    overflow-y: auto;
+    cursor: default !important;
+    touch-action: pan-y !important;
+}
+body .fancybox__slide {
+    cursor: default !important;
+    transform: none !important;
+}
+.react-modal-container {
+    padding: 20px 0;
+    max-width: 600px;
+    width: 100%;
+}

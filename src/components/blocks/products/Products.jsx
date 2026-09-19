@@ -1,12 +1,23 @@
 import './style.scss'
+import { useState } from 'react'
 import SectionHead from '../sectionHead/SectionHead'
 import { Tabs, TabsHeader, TabsTrigger, TabsBody, TabsContent, } from "../../tabs/Tabs";
 import ProductCard from '../../cards/productCard/ProductCard'
-export default function Products() {
+export default function Products({ onItemChange }) {
+    const [cartItems, setCartItems] = useState({})
+
+    function handleProductChange(id, isActive) {
+        setCartItems((items) => ({
+            ...items,
+            [id]: isActive,
+        }))
+        onItemChange?.(isActive)
+    }
+
     const products = {
         Sale: [
             {
-                id: 1,
+                id: 'sale-1',
                 preview: './tc-1@x2.jpg',
                 name: 'Spread Collar Shirt',
                 price: '38.99',
@@ -14,7 +25,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 2,
+                id: 'sale-2',
                 preview: './tc-2@x2.jpg',
                 name: 'White Solid Formal Shirt',
                 price: '62.99',
@@ -22,7 +33,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 3,
+                id: 'sale-3',
                 preview: './tc-3@x2.jpg',
                 name: 'Shine On Me Blouse',
                 price: '49.99',
@@ -30,7 +41,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 4,
+                id: 'sale-4',
                 preview: './tc-4@x2.jpg',
                 name: 'Gray Solid Padded Jacket',
                 price: '49.99',
@@ -38,7 +49,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 5,
+                id: 'sale-5',
                 preview: './tc-5@x2.jpg',
                 name: 'Printed Loose T-shirt',
                 price: '49.99',
@@ -46,7 +57,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 6,
+                id: 'sale-6',
                 preview: './tc-6@x2.jpg',
                 name: 'Summer Wind Crop Shirt',
                 price: '49.99',
@@ -54,7 +65,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 7,
+                id: 'sale-7',
                 preview: './tc-7@x2.jpg',
                 name: 'Tailored Jacket',
                 price: '49.99',
@@ -62,7 +73,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 8,
+                id: 'sale-8',
                 preview: './tc-8@x2.jpg',
                 name: 'Solid Round Neck T-shirt',
                 price: '49.99',
@@ -73,7 +84,7 @@ export default function Products() {
 
         HOT: [
             {
-                id: 1,
+                id: 'HOT-1',
                 preview: './tc-3@x2.jpg',
                 name: 'Shine On Me Blouse',
                 price: '49.99',
@@ -81,7 +92,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 2,
+                id: 'HOT-2',
                 preview: './tc-4@x2.jpg',
                 name: 'Gray Solid Padded Jacket',
                 price: '49.99',
@@ -89,7 +100,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 3,
+                id: 'HOT-3',
                 preview: './tc-5@x2.jpg',
                 name: 'Printed Loose T-shirt',
                 price: '49.99',
@@ -97,7 +108,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 4,
+                id: 'HOT-4',
                 preview: './tc-6@x2.jpg',
                 name: 'Summer Wind Crop Shirt',
                 price: '49.99',
@@ -108,7 +119,7 @@ export default function Products() {
 
         'New Arrivals': [
             {
-                id: 1,
+                id: 'Arrivals-1',
                 preview: './tc-4@x2.jpg',
                 name: 'Gray Solid Padded Jacket',
                 price: '49.99',
@@ -116,7 +127,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 2,
+                id: 'Arrivals-2',
                 preview: './tc-7@x2.jpg',
                 name: 'Tailored Jacket',
                 price: '49.99',
@@ -124,7 +135,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 3,
+                id: 'Arrivals-3',
                 preview: './tc-8@x2.jpg',
                 name: 'Solid Round Neck T-shirt',
                 price: '49.99',
@@ -135,7 +146,7 @@ export default function Products() {
 
         Accessories: [
             {
-                id: 1,
+                id: 'Accessories-1',
                 preview: './tc-5@x2.jpg',
                 name: 'Printed Loose T-shirt',
                 price: '49.99',
@@ -143,7 +154,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 2,
+                id: 'Accessories-2',
                 preview: './tc-5@x2.jpg',
                 name: 'Printed Loose T-shirt',
                 price: '49.99',
@@ -151,7 +162,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 3,
+                id: 'Accessories-3',
                 preview: './tc-6@x2.jpg',
                 name: 'Summer Wind Crop Shirt',
                 price: '49.99',
@@ -159,7 +170,7 @@ export default function Products() {
                 link: '#',
             },
             {
-                id: 4,
+                id: 'Accessories-4',
                 preview: './tc-7@x2.jpg',
                 name: 'Tailored Jacket',
                 price: '49.99',
@@ -199,6 +210,10 @@ export default function Products() {
                                             price={item.price}
                                             rating={item.rating}
                                             link={item.link}
+                                            hasItem={Boolean(cartItems[item.id])}
+                                            onHasItemChange={(isActive) =>
+                                                handleProductChange(item.id, isActive)
+                                            }
                                         />
                                     ))}
                                 </div>

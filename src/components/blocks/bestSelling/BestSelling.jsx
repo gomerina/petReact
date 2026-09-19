@@ -1,7 +1,7 @@
 import './style.scss';
 import SectionHead from '../sectionHead/SectionHead'
 import ProductCard from '../../cards/productCard/ProductCard'
-export default function BestSelling() {
+export default function BestSelling({ onItemChange }) {
     const products = [
         {
             id: 1,
@@ -44,6 +44,7 @@ export default function BestSelling() {
                             price={item.price}
                             rating={item.rating}
                             link={item.link}
+                            onItemChange={onItemChange}
                         />
                     ))}
                 </div>

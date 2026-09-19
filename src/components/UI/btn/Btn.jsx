@@ -4,6 +4,9 @@ export default function Btn({
     children,
     as = 'button',
     className = '',
+    isActive,
+    onClick,
+    setBasketValue,
     ...props
 }) {
     const Component = as
@@ -12,6 +15,7 @@ export default function Btn({
         <Component
             className={`btn ${className}`}
             {...props}
+            onClick={onClick}
         >
             {children}
         </Component>

@@ -2,7 +2,7 @@ import './style.scss'
 import Logo from '/svg/logo.svg'
 import BasketIcon from '../../UI/basketIcon/BasketIcon'
 import Btn from '../../UI/btn/Btn'
-export default function Header() {
+export default function Header({ basketCount }) {
     const menuItems = [
         {
             title: 'Home',
@@ -38,8 +38,8 @@ export default function Header() {
 
                         </ul>
                         <div className="header__controls">
-                            <BasketIcon />
-                            <Btn>Login</Btn>
+                            <BasketIcon basketCount={basketCount} />
+                            <Btn data-modal="login">Login</Btn>
                         </div>
                     </div>
                 </div>

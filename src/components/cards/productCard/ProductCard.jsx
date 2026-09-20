@@ -54,6 +54,9 @@ export default function ProductCard({
 
                     <div className="product-card__rating">
                         <span>{rating}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M19.53 23.3152L12.063 17.8272L4.596 23.3152L7.463 14.4522L0 8.99922H9.214L12.063 0.121216L14.912 8.99922H24.125L16.663 14.4522L19.53 23.3152Z" fill="#F5D426" />
+                        </svg>
                     </div>
                 </div>
             </a>

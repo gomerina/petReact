@@ -4,7 +4,6 @@ import { Fancybox } from '@fancyapps/ui'
 
 import { modalRegistry } from '../../../modalRegistry'
 
-import '@fancyapps/ui/dist/fancybox/fancybox.css'
 
 export default function ModalProvider() {
     useEffect(() => {
@@ -78,14 +77,33 @@ function openModal(ModalComponent) {
 
     let pointerStartX = 0
     let pointerStartY = 0
+    let pointerStartedInModal = false
 
     const handlePointerStart = (event) => {
+        pointerStartedInModal = event.target instanceof Element
+            && Boolean(event.target.closest('.modal'))
+
+        if (pointerStartedInModal) {
+            const target = event.target instanceof Element ? event.target : null
+
+            if (!target?.closest('input, button, a, [tabindex], [contenteditable="true"]')) {
+                document.activeElement?.blur()
+            }
+
+            event.stopImmediatePropagation()
+            return
+        }
+
         horizontalGesture = false
         pointerStartX = event.clientX
         pointerStartY = event.clientY
     }
 
     const handlePointerMove = (event) => {
+        if (pointerStartedInModal) {
+            return
+        }
+
         const deltaX = Math.abs(event.clientX - pointerStartX)
         const deltaY = Math.abs(event.clientY - pointerStartY)
 
@@ -124,6 +142,7 @@ function openModal(ModalComponent) {
                 dragToClose: false,
                 keyboard: false,
                 Carousel: {
+                    gestures: false,
                     Panzoom: {
                         touch: false,
                     },

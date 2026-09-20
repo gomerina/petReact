@@ -1,6 +1,14 @@
 .timer {
     display: flex;
     gap: 35px;
+    @media screen and (max-width: 1260px) {
+        gap: 20px;
+    }
+    @media screen and (max-width: 580px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
     &__item {
         width: 100px;
         height: 100px;
@@ -10,6 +18,13 @@
         flex-direction: column;
         background: #fff;
         color: #224f34;
+        @media screen and (max-width: 1260px) {
+            width: 80px;
+            height: 80px;
+        }
+        @media screen and (max-width: 580px) {
+            width: 100%;
+        }
         &-body {
             font-size: 16px;
         }

@@ -1,17 +1,37 @@
 .main-screen {
     padding: 104px 0 166px 0;
     background: #c2efd4;
+    @media screen and (max-width: 1440px) {
+        padding: 60px 0;
+    }
+    @media screen and (max-width: 1024px) {
+        padding: 30px 0;
+    }
     &__row {
         display: flex;
         gap: 30px;
         justify-content: space-between;
+        @media screen and (max-width: 1440px) {
+            align-items: center;
+        }
+        @media screen and (max-width: 580px) {
+            flex-direction: column;
+            align-items: stretch;
+        }
     }
     &__content {
         max-width: 650px;
         width: 100%;
+        @media screen and (max-width: 1024px) {
+            max-width: unset;
+            width: auto;
+        }
     }
     &__heading {
         margin: 0 0 27px 0;
+        @media screen and (max-width: 1440px) {
+            margin: 0 0 20px 0;
+        }
     }
     &__descr {
         font-size: 24px;
@@ -20,12 +40,46 @@
         margin: 0 0 54px 0;
         color: #267d49;
         max-width: 565px;
+        @media screen and (max-width: 1440px) {
+            font-size: 22px;
+            line-height: 130%;
+            margin: 0 0 30px 0;
+        }
+        @media screen and (max-width: 1024px) {
+            max-width: unset;
+        }
+    }
+    & .btn {
+        @media screen and (max-width: 580px) {
+            width: 100%;
+        }
     }
     &__img {
         width: 570px;
         flex-shrink: 0;
         border-radius: 150px 60px;
         overflow: hidden;
+        @media screen and (max-width: 1440px) {
+            width: 400px;
+        }
+        @media screen and (max-width: 1024px) {
+            width: 300px;
+            border-radius: 80px 20px;
+        }
+        @media screen and (max-width: 580px) {
+            width: auto;
+            display: none;
+        }
+    }
+    &__mobile {
+        display: none;
+        margin: 0 0 30px 0;
+        @media screen and (max-width: 580px) {
+            display: block;
+            & .main-screen__img {
+                display: block;
+            }
+        }
     }
     & .btn.fill {
         box-shadow: 6px 33px 59px 0 rgba(0, 0, 0, 0.3);

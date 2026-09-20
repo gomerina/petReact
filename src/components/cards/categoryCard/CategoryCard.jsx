@@ -13,7 +13,7 @@ export default function CategorytCard({
             </div>
             <div className='category-card__body'>
                 <div className="category-card__name h4">{name}</div>
-                <div className='category-card__body'>
+                <div className='category-card__text'>
                     <p>{descr}</p>
                 </div>
             </div>

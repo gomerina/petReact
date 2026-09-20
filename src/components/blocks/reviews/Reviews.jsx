@@ -56,18 +56,18 @@ export default function Reviews() {
                         nextEl: '.reviews-next',
                     }}
                     breakpoints={{
-                        //640: {
-                        //    slidesPerView: 2,
-                        //    spaceBetween: 20,
-                        //},
-                        //768: {
-                        //    slidesPerView: 4,
-                        //    spaceBetween: 40,
-                        //},
-                        //1024: {
-                        //    slidesPerView: 5,
-                        //    spaceBetween: 50,
-                        //},
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        769: {
+                            slidesPerView: 2,
+                            spaceBetween: 24,
+                        },
+                        1025: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        },
                     }}
                     modules={[Navigation]}
                     className="reviews-slider"

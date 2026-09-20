@@ -17,6 +17,11 @@ export default function mainScreen() {
                                 {mainScreenDescr}
                             </p>
                         </div>
+                        <div className='main-screen__mobile'>
+                            <div className='main-screen__img'>
+                                <img src={mainScreenImg} alt="" />
+                            </div>
+                        </div>
                         <Btn as="a" href="#" className="fill">Explore Now</Btn>
                     </div>
                     <div className='main-screen__img'>

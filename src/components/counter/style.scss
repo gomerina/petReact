@@ -12,6 +12,10 @@
         line-height: normal;
         color: #a9d4ba;
         flex-shrink: 0;
+        @media screen and (max-width: 1260px) {
+            height: 60px;
+            width: 60px;
+        }
     }
     & input {
         width: 100%;

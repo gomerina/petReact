@@ -1,9 +1,18 @@
 .section__head {
     margin: 0 0 80px 0;
     text-align: center;
+    @media screen and (max-width: 1440px) {
+        margin: 0 0 50px 0;
+    }
+    @media screen and (max-width: 1260px) {
+        margin: 0 0 30px 0;
+    }
 }
 .section__heading {
     margin: 0 0 37px 0;
+    @media screen and (max-width: 1260px) {
+        margin: 0 0 15px 0;
+    }
 }
 .section__subheading {
     font-size: 22px;

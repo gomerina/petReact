@@ -5,23 +5,62 @@
         gap: 30px;
         padding: 41px 120px 0 41px;
         background: #c2efd4;
+        @media screen and (max-width: 1260px) {
+            padding: 30px 40px 0 30px;
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column-reverse;
+            gap: 20px;
+            padding: 20px 15px 0 15px;
+        }
     }
     &__content {
         padding: 33px 0;
         max-width: 590px;
+        @media screen and (max-width: 768px) {
+            max-width: unset;
+            padding: 0;
+        }
     }
     &__img {
         width: 460px;
         flex-shrink: 0;
-        margin-top: auto;
+        margin-top: auto !important;
+        @media screen and (max-width: 1260px) {
+            width: 360px;
+        }
+        @media screen and (max-width: 1024px) {
+            width: 200px;
+        }
+        @media screen and (max-width: 768px) {
+            width: 300px;
+            margin: 0 auto !important;
+        }
+        @media screen and (max-width: 580px) {
+            width: 230px;
+        }
     }
     &__heading {
         margin: 0 0 20px 0;
+        @media screen and (max-width: 1260px) {
+            margin: 0 0 15px 0;
+        }
     }
     &__descr {
         margin: 0 0 40px 0;
+        @media screen and (max-width: 1260px) {
+            margin: 0 0 25px 0;
+        }
+    }
+    & .btn {
+        @media screen and (max-width: 580px) {
+            width: 100%;
+        }
     }
     &__timer {
         margin: 0 0 40px 0;
+        @media screen and (max-width: 1260px) {
+            margin: 0 0 25px 0;
+        }
     }
 }

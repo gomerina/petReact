@@ -34,6 +34,12 @@
     width: 100%;
     padding: 0 30px;
     margin: 0 auto;
+    @media screen and (max-width: 1440px) {
+        max-width: 1200px;
+    }
+    @media screen and (max-width: 1260px) {
+        max-width: 1023px;
+    }
     @media screen and (max-width: 1024px) {
         padding: 0 20px;
     }
@@ -41,7 +47,7 @@
 .section {
     margin: 120px 0;
     @media screen and (max-width: 1260px) {
-        margin: 80px 0;
+        margin: 60px 0;
     }
 }
 .centered-box {
@@ -53,6 +59,9 @@ body .swiper-slide {
     display: flex;
     flex-direction: column;
     height: auto;
+}
+body.locked {
+    overflow: clip !important;
 }
 body .fancybox__carousel {
     overflow-y: auto;

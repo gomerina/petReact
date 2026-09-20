@@ -5,6 +5,21 @@
     padding: 32px;
     background: #fff;
     color: #000;
+    &__row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        & .btn {
+            width: auto !important;
+            flex-grow: 1;
+        }
+    }
+    &__change {
+        font-size: 16px;
+        cursor: pointer;
+        user-select: none;
+    }
 }
 
 @keyframes modalFadeIn {

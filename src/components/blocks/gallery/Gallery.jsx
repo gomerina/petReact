@@ -5,7 +5,11 @@ import './style.scss'
 
 import SectionHead from '../sectionHead/SectionHead'
 
-const fancyboxOptions = {}
+const fancyboxOptions = {
+    Carousel: {
+        transition: 'slide',
+    },
+}
 
 function useFancybox(options = fancyboxOptions) {
     const [root, setRoot] = useState(null)

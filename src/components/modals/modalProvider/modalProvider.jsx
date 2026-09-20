@@ -4,6 +4,7 @@ import { Fancybox } from '@fancyapps/ui'
 
 import { modalRegistry } from '../../../modalRegistry'
 
+import '@fancyapps/ui/dist/fancybox/fancybox.css'
 
 export default function ModalProvider() {
     useEffect(() => {
@@ -141,6 +142,7 @@ function openModal(ModalComponent) {
                 click: false,
                 dragToClose: false,
                 keyboard: false,
+                mainClass: 'modal-fancybox',
                 Carousel: {
                     gestures: false,
                     Panzoom: {

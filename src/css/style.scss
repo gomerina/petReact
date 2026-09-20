@@ -63,12 +63,12 @@ body .swiper-slide {
 body.locked {
     overflow: clip !important;
 }
-body .fancybox__carousel {
+.modal-fancybox .fancybox__carousel {
     overflow-y: auto;
     cursor: default !important;
     touch-action: pan-y !important;
 }
-body .fancybox__slide {
+.modal-fancybox .fancybox__slide {
     cursor: default !important;
     transform: none !important;
 }

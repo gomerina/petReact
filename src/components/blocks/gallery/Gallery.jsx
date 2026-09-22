@@ -28,18 +28,9 @@ function useFancybox(options = fancyboxOptions) {
     return [setRoot]
 }
 
-const images = [
-    './pc-1@x2.jpg',
-    './pc-2@x2.jpg',
-    './pc-3@x2.jpg',
-    './tc-1@x2.jpg',
-    './tc-2@x2.jpg',
-    './tc-3@x2.jpg',
-    './tc-4@x2.jpg',
-    './tc-5@x2.jpg',
-]
 
-export default function Gallery() {
+
+export default function Gallery({ items = [] }) {
     const [fancyboxRef] = useFancybox()
 
     return (
@@ -48,7 +39,7 @@ export default function Gallery() {
                 <SectionHead>Gallery</SectionHead>
 
                 <div className="gallery__layout" ref={fancyboxRef}>
-                    {images.map((src, index) => (
+                    {items.map((src, index) => (
                         <a
                             key={src}
                             href={src}

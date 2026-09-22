@@ -1,0 +1,20 @@
+.toggler {
+    &__body {
+        display: grid;
+        grid-template-rows: 0fr;
+        padding: 0 20px;
+        overflow: hidden;
+        transition: var(--transition);
+
+        > div {
+            min-height: 0;
+            overflow: hidden;
+        }
+    }
+
+    &__head.active + &__body,
+    &__body.active {
+        grid-template-rows: 1fr;
+        padding: 0 25px 25px;
+    }
+}

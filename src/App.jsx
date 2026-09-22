@@ -14,8 +14,10 @@ import Offer from './components/blocks/offer/Offer'
 import MainCategories from './components/blocks/mainCategories/MainCategories'
 import Reviews from './components/blocks/reviews/Reviews'
 import Gallery from './components/blocks/gallery/Gallery'
+import Faq from './components/blocks/faq/Faq'
 import ModalProvider from './components/modals/modalProvider/modalProvider'
-
+import MainGallery from './components/blocks/gallery/data/MainGallery.js'
+import MainFaq from './components/blocks/faq/data/MainFaq.js'
 export default function App() {
 	const [basketCount, setBasketCount] = useState(0)
 
@@ -35,7 +37,8 @@ export default function App() {
 				<Products onItemChange={handleItemChange} />
 				<Offer />
 				<MainCategories />
-				<Gallery />
+				<Gallery items={MainGallery} />
+				<Faq items={MainFaq} />
 				<Reviews />
 			</main>
 			<ModalProvider />
